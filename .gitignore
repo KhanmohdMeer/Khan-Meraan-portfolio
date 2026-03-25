@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node (if you add later)
+node_modules/
+
+# Env files
+.env
+
+# Build files
+dist/
+build/
+
+# VS Code
+.vscode/
+
+# Unreal leftovers (if any assets referenced)
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Khan Meraan Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f172a, #020617);
+}
+
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+
+<body class="text-white font-sans">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 bg-black/30 backdrop-blur-lg border-b border-gray-800">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <h1 class="font-bold text-lg">KM</h1>
+    <div class="space-x-6 text-sm">
+      <a href="#devops" class="hover:text-blue-400">DevOps</a>
+      <a href="#systems" class="hover:text-purple-400">Systems</a>
+      <a href="#game" class="hover:text-green-400">Game</a>
+      <a href="#contact" class="hover:text-blue-400">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="h-screen flex flex-col justify-center items-center text-center px-6 fade">
+
+  <h1 class="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+    Khan Meraan
+  </h1>
+
+  <p class="text-lg text-gray-400 max-w-xl mb-8">
+    DevOps Engineer & Unreal Engine Gameplay Systems Developer building scalable infrastructure and modular gameplay systems.
+  </p>
+
+  <div class="flex gap-4 flex-wrap justify-center">
+    <a href="https://khanmohdmeer.github.io/devops-portfolio" target="_blank"
+      class="px-6 py-3 bg-blue-600 rounded-lg hover:scale-105 transition">
+      DevOps Portfolio
+    </a>
+
+    <a href="https://khanmohdmeer.github.io/unreal-portfolio" target="_blank"
+      class="px-6 py-3 bg-purple-600 rounded-lg hover:scale-105 transition">
+      Unreal Portfolio
+    </a>
+  </div>
+
+</section>
+
+<!-- DEVOPS -->
+<section id="devops" class="max-w-6xl mx-auto px-6 py-16 fade">
+  <h2 class="text-4xl font-bold mb-12 text-center">DevOps Projects</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="glass card p-6 rounded-2xl">
+      <h3 class="text-xl font-semibold mb-2 text-blue-400">AWS Infrastructure</h3>
+      <p class="text-gray-400 mb-4">
+        Built secure cloud architecture using VPC, EC2, and monitoring.
+      </p>
+    </div>
+
+    <div class="glass card p-6 rounded-2xl">
+      <h3 class="text-xl font-semibold mb-2 text-blue-400">Kubernetes Cluster</h3>
+      <p class="text-gray-400 mb-4">
+        RBAC, cluster setup, and backup system using Velero.
+      </p>
+    </div>
+
+    <div class="glass card p-6 rounded-2xl">
+      <h3 class="text-xl font-semibold mb-2 text-blue-400">CI/CD Pipeline</h3>
+      <p class="text-gray-400 mb-4">
+        Automated deployment using GitHub Actions and Docker.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SYSTEMS -->
+<section id="systems" class="max-w-6xl mx-auto px-6 py-16 fade">
+  <h2 class="text-4xl font-bold mb-12 text-center">Gameplay Systems</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="glass card p-6 rounded-2xl">
+      <h3 class="text-xl font-semibold text-purple-400">Combat System</h3>
+      <p class="text-gray-400">Damage system with animation sync.</p>
+    </div>
+
+    <div class="glass card p-6 rounded-2xl">
+      <h3 class="text-xl font-semibold text-purple-400">AI Animal System</h3>
+      <p class="text-gray-400">Behavior tree and movement logic.</p>
+    </div>
+
+    <div class="glass card p-6 rounded-2xl">
+      <h3 class="text-xl font-semibold text-purple-400">Inventory System</h3>
+      <p class="text-gray-400">Loot and item management system.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- GAME -->
+<section id="game" class="max-w-4xl mx-auto px-6 py-16 text-center fade">
+  <h2 class="text-4xl font-bold mb-6">Game Project</h2>
+
+  <p class="text-gray-400">
+    Open-world survival RPG with combat, AI, loot, and progression systems.
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="max-w-xl mx-auto px-6 py-16 fade">
+  <h2 class="text-4xl font-bold mb-10 text-center">Contact</h2>
+
+  <form action="https://formspree.io/f/xgopwjzq" method="POST" class="space-y-4">
+
+    <input type="text" name="_gotcha" style="display:none">
+
+    <input type="text" name="name" placeholder="Your Name" required
+      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg"/>
+
+    <input type="email" name="email" placeholder="Your Email" required
+      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg"/>
+
+    <textarea name="message" placeholder="Message" required
+      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg"></textarea>
+
+    <button class="w-full py-3 bg-blue-600 rounded-lg hover:scale-105 transition">
+      Send Message
+    </button>
+
+  </form>
+</section>
+
+<footer class="text-center py-6 text-gray-500 border-t border-gray-800">
+  © 2026 Khan Meraan
+</footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+faders.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
