@@ -8,6 +8,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -16,22 +20,43 @@ html, body {
 
 body {
   background: radial-gradient(circle at top, #0f172a, #020617);
+  font-family: sans-serif;
 }
 
+/* Glass effect */
 .glass {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.08);
 }
 
+/* Card animation */
 .card {
   transition: all 0.3s ease;
 }
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
+/* Glow effect */
+.glow {
+  position: relative;
+  overflow: hidden;
+}
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(59,130,246,0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.glow:hover::before {
+  opacity: 1;
+}
+
+/* Fade animation */
 .fade {
   opacity: 0;
   transform: translateY(30px);
@@ -44,17 +69,17 @@ body {
 </style>
 </head>
 
-<body class="text-white font-sans">
+<body class="text-white">
 
 <!-- NAVBAR -->
 <nav class="fixed top-0 w-full z-50 bg-black/30 backdrop-blur-lg border-b border-gray-800">
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
     <h1 class="font-bold text-lg">KM</h1>
     <div class="space-x-6 text-sm">
-      <a href="#devops" class="hover:text-blue-400">DevOps</a>
-      <a href="#systems" class="hover:text-purple-400">Systems</a>
-      <a href="#game" class="hover:text-green-400">Game</a>
-      <a href="#contact" class="hover:text-blue-400">Contact</a>
+      <a href="#devops" class="hover:text-blue-400 transition">DevOps</a>
+      <a href="#systems" class="hover:text-purple-400 transition">Systems</a>
+      <a href="#game" class="hover:text-green-400 transition">Game</a>
+      <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
     </div>
   </div>
 </nav>
@@ -72,12 +97,12 @@ body {
 
   <div class="flex gap-4 flex-wrap justify-center">
     <a href="https://khanmohdmeer.github.io/devops-portfolio" target="_blank"
-      class="px-6 py-3 bg-blue-600 rounded-lg hover:scale-105 transition">
+      class="px-6 py-3 bg-blue-600 rounded-lg transition hover:scale-105 hover:shadow-lg active:scale-95">
       DevOps Portfolio
     </a>
 
     <a href="https://khanmohdmeer.github.io/unreal-portfolio" target="_blank"
-      class="px-6 py-3 bg-purple-600 rounded-lg hover:scale-105 transition">
+      class="px-6 py-3 bg-purple-600 rounded-lg transition hover:scale-105 hover:shadow-lg active:scale-95">
       Unreal Portfolio
     </a>
   </div>
@@ -90,25 +115,22 @@ body {
 
   <div class="grid md:grid-cols-3 gap-8">
 
-    <div class="glass card p-6 rounded-2xl">
-      <h3 class="text-xl font-semibold mb-2 text-blue-400">AWS Infrastructure</h3>
-      <p class="text-gray-400 mb-4">
-        Built secure cloud architecture using VPC, EC2, and monitoring.
-      </p>
+    <div class="glass glow card p-6 rounded-2xl">
+      <h3 class="text-xl text-blue-400">AWS Infrastructure</h3>
+      <p class="text-gray-400 mt-3">VPC, EC2, networking, monitoring.</p>
+      <p class="text-xs text-gray-500 mt-2">AWS • VPC • EC2 • CloudFormation</p>
     </div>
 
-    <div class="glass card p-6 rounded-2xl">
-      <h3 class="text-xl font-semibold mb-2 text-blue-400">Kubernetes Cluster</h3>
-      <p class="text-gray-400 mb-4">
-        RBAC, cluster setup, and backup system using Velero.
-      </p>
+    <div class="glass glow card p-6 rounded-2xl">
+      <h3 class="text-xl text-blue-400">Kubernetes Cluster</h3>
+      <p class="text-gray-400 mt-3">RBAC, Velero, cluster scaling.</p>
+      <p class="text-xs text-gray-500 mt-2">Kubernetes • RBAC • YAML</p>
     </div>
 
-    <div class="glass card p-6 rounded-2xl">
-      <h3 class="text-xl font-semibold mb-2 text-blue-400">CI/CD Pipeline</h3>
-      <p class="text-gray-400 mb-4">
-        Automated deployment using GitHub Actions and Docker.
-      </p>
+    <div class="glass glow card p-6 rounded-2xl">
+      <h3 class="text-xl text-blue-400">CI/CD Pipeline</h3>
+      <p class="text-gray-400 mt-3">Automated deployment system.</p>
+      <p class="text-xs text-gray-500 mt-2">GitHub Actions • Docker</p>
     </div>
 
   </div>
@@ -120,19 +142,19 @@ body {
 
   <div class="grid md:grid-cols-3 gap-8">
 
-    <div class="glass card p-6 rounded-2xl">
-      <h3 class="text-xl font-semibold text-purple-400">Combat System</h3>
-      <p class="text-gray-400">Damage system with animation sync.</p>
+    <div class="glass glow card p-6 rounded-2xl">
+      <h3 class="text-xl text-purple-400">Combat System</h3>
+      <p class="text-gray-400 mt-3">Damage, animation sync.</p>
     </div>
 
-    <div class="glass card p-6 rounded-2xl">
-      <h3 class="text-xl font-semibold text-purple-400">AI Animal System</h3>
-      <p class="text-gray-400">Behavior tree and movement logic.</p>
+    <div class="glass glow card p-6 rounded-2xl">
+      <h3 class="text-xl text-purple-400">AI Animal System</h3>
+      <p class="text-gray-400 mt-3">Behavior trees & navigation.</p>
     </div>
 
-    <div class="glass card p-6 rounded-2xl">
-      <h3 class="text-xl font-semibold text-purple-400">Inventory System</h3>
-      <p class="text-gray-400">Loot and item management system.</p>
+    <div class="glass glow card p-6 rounded-2xl">
+      <h3 class="text-xl text-purple-400">Inventory System</h3>
+      <p class="text-gray-400 mt-3">Loot & item handling.</p>
     </div>
 
   </div>
@@ -143,7 +165,7 @@ body {
   <h2 class="text-4xl font-bold mb-6">Game Project</h2>
 
   <p class="text-gray-400">
-    Open-world survival RPG with combat, AI, loot, and progression systems.
+    Open-world survival RPG with modular systems and scalable gameplay design.
   </p>
 </section>
 
@@ -156,15 +178,15 @@ body {
     <input type="text" name="_gotcha" style="display:none">
 
     <input type="text" name="name" placeholder="Your Name" required
-      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg"/>
+      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:border-blue-500"/>
 
     <input type="email" name="email" placeholder="Your Email" required
-      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg"/>
+      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:border-blue-500"/>
 
     <textarea name="message" placeholder="Message" required
-      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg"></textarea>
+      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:border-blue-500"></textarea>
 
-    <button class="w-full py-3 bg-blue-600 rounded-lg hover:scale-105 transition">
+    <button class="w-full py-3 bg-blue-600 rounded-lg transition hover:scale-105">
       Send Message
     </button>
 
@@ -177,13 +199,17 @@ body {
 
 <script>
 const faders = document.querySelectorAll('.fade');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('show');
+      }, index * 120);
     }
   });
-});
+}, { threshold: 0.2 });
+
 faders.forEach(el => observer.observe(el));
 </script>
 
